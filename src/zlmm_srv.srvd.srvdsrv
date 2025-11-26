@@ -1,0 +1,6 @@
+@EndUserText.label: 'service def for COntracts'
+define service ZLMM_SRV {
+  expose ZC_CONTRACT          as Contracts;
+  expose ZI_INV_HDR           as Invoices;
+  expose ZI_contractAnalytics as ContractAnalytics;
+}

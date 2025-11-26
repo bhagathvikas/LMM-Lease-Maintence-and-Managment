@@ -1,0 +1,22 @@
+managed implementation in class zbp_i_contract unique;
+strict;
+
+
+define behavior for ZI_CONTRACT alias Contract
+persistent table zlmm_contract
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) contractid;
+
+  action ActivateContract ;
+   action GenerateInvoice   ;
+
+  determination DefaultValues on modify { create; }
+  validation   CheckDates    on save   { create; update; }
+
+}
